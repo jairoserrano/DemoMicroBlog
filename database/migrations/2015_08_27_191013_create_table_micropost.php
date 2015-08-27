@@ -12,7 +12,7 @@ class CreateTableMicropost extends Migration
      */
     public function up()
     {
-        Schema::create('micropost', function (Blueprint $table) {
+        Schema::create('microposts', function (Blueprint $table) {
             $table->string('title');
             $table->string('body');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTableMicropost extends Migration
      */
     public function down()
     {
-        Schema::drop('micropost');
+        Schema::drop('microposts');
     }
 }

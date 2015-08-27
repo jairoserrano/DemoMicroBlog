@@ -12,3 +12,7 @@
 */
 
 Route::resource('/', 'MicroblogController');
+
+Route::get('/all.json',function (){
+    return App\Micropost::all();
+});

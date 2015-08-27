@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Micropost;
 use App\Http\Controllers\Controller;
 
 class MicroblogController extends Controller
@@ -16,7 +17,8 @@ class MicroblogController extends Controller
      */
     public function index()
     {
-        return "index";
+        $posts = Micropost::all();
+        return view('microblog.index', ['posts' => $posts]);
     }
 
     /**
