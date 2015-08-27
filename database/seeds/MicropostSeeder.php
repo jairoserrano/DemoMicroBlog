@@ -15,7 +15,7 @@ class MicropostSeeder extends Seeder
         $faker = Faker::create();
 
         DB::table('micropost')->insert([
-            'title' => str_random(10),
+            'title' => "titulo del primer mensaje",
             'body' => str_random(100),
             'created_at' => $faker->dateTime(),
             'updated_at' => $faker->dateTime(),
@@ -24,7 +24,7 @@ class MicropostSeeder extends Seeder
         ]);
 
         DB::table('micropost')->insert([
-            'title' => str_random(10),
+            'title' => 'titulo del segundo mensaje',
             'body' => str_random(100),
             'created_at' => $faker->dateTime(),
             'updated_at' => $faker->dateTime(),
@@ -33,7 +33,7 @@ class MicropostSeeder extends Seeder
         ]);
 
         DB::table('micropost')->insert([
-            'title' => str_random(10),
+            'title' => 'titulo del tercer mensaje',
             'body' => str_random(100),
             'created_at' => $faker->dateTime(),
             'updated_at' => $faker->dateTime(),
