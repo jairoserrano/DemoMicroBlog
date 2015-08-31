@@ -17,6 +17,9 @@ class CreateTableMicropost extends Migration
             $table->string('body');
             $table->timestamps();
             $table->timestamp('published_at');
+            $table->integer('user_id')->unsigned();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

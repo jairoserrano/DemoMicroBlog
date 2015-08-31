@@ -20,6 +20,7 @@ class MicropostSeeder extends Seeder
             'created_at' => $faker->dateTime(),
             'updated_at' => $faker->dateTime(),
             'published_at' => $faker->dateTime(),
+            'user_id' => 1,
 
         ]);
 
@@ -29,6 +30,7 @@ class MicropostSeeder extends Seeder
             'created_at' => $faker->dateTime(),
             'updated_at' => $faker->dateTime(),
             'published_at' => $faker->dateTime(),
+            'user_id' => 1,
 
         ]);
 
@@ -38,6 +40,7 @@ class MicropostSeeder extends Seeder
             'created_at' => $faker->dateTime(),
             'updated_at' => $faker->dateTime(),
             'published_at' => $faker->dateTime(),
+            'user_id' => 2,
 
         ]);
 
