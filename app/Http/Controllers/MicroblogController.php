@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Provider\cs_CZ\DateTime;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -39,7 +40,15 @@ class MicroblogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Micropost;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->user_id = 1;
+        $post->published_at = DateTime::dateTime();
+        $post->save();
+
+        return redirect('/');
+
     }
 
     /**

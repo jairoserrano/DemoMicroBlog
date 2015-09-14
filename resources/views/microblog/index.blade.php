@@ -94,6 +94,31 @@
                 <hr class="star-primary">
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12 portfolio-item">
+                {!! Form::open(array('url' => '/')) !!}
+                {!! Form::token() !!}
+                {!!
+                    Form::text('title', null,
+                                array(
+                                    'class' => 'form-control input-lg',
+                                    'placeholder' => 'Titulo de la nueva publicación'
+                                    )
+                                )
+                !!}
+                {!!
+                    Form::text('body', null,
+                                array(
+                                    'class' => 'form-control input-lg',
+                                    'rows' => 6,
+                                    'placeholder' => 'Contenido'
+                                    )
+                                )
+                !!}
+                {!! Form::submit('Publicar', array ('class' => 'center-block btn btn-primary btn-lg center')) !!}
+                {!! Form::close() !!}
+            </div>
+        </div>
         @forelse ($posts as $post)
         <div class="row">
             <div class="col-sm-12 portfolio-item">
@@ -166,7 +191,6 @@
 
 <!-- Contact Form JavaScript -->
 <script src="/js/jqBootstrapValidation.js"></script>
-<script src="/js/contact_me.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/freelancer.js"></script>
