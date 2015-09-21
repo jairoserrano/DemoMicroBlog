@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Micropost;
-use App\Http\Controllers\Controller;
 
 class MicroblogController extends Controller
 {
@@ -41,14 +40,17 @@ class MicroblogController extends Controller
     public function store(Request $request)
     {
         $post = new Micropost;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->user_id = 1;
-        $post->published_at = DateTime::dateTime();
-        $post->save();
 
-        return redirect('/');
-
+        if($request->has("title") && $request->has("body")) {
+            $post->title = $request->title;
+            $post->body = $request->body;
+            $post->user_id = 1;
+            $post->published_at = DateTime::dateTime();
+            $post->save();
+            return redirect('/')->with('success', 'Ninguno');
+        }else{
+            return redirect('/')->with('error', 'Faltan datos');
+        }
     }
 
     /**
